@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { NgxLoadingModule } from 'ngx-loading';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({

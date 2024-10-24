@@ -1,0 +1,16 @@
+.start-counter {
+  counter-reset: article;
+}
+
+.start-counter > article::before {
+  counter-increment: article;
+  content: counter(article);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+
+.before::after {
+  content: "*";
+  position: absolute;
+  margin-top: 0.2rem;
+}

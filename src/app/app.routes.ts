@@ -3,6 +3,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CreateProductComponent } from './pages/dashboard/create-product/create-product.component';
+import { ProductListComponent } from './pages/dashboard/product-list/product-list.component';
+import { VenderComponent } from './pages/dashboard/vender/vender.component';
 
 export const routes: Routes = [
   {
@@ -15,12 +20,25 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path:"about",
-    component:AboutComponent
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: 'products',
     component: ProductsComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: 'create', component: CreateProductComponent },
+      { path: 'product-list', component: ProductListComponent },
+      { path: 'vender', component: VenderComponent },
+    ],
+  },
+  {
+    path: 'profile/:profileId',
+    component: ProfileComponent,
   },
   // Wildcard route to handle 404
   {

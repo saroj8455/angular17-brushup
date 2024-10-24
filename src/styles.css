@@ -169,13 +169,12 @@ app-root {
 main {
   /* flex-grow: 1; */
   flex-grow: 1;
+
   /* padding: 1rem; */
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: center; */
   /* justify-content: center; */
-
-
 }
 
 /* make products list grid same height and width */
@@ -193,4 +192,15 @@ main {
 
 .p-card-content > p {
   font-size: 0.8rem;
+}
+
+/* bluer header nav */
+header {
+  position: sticky;
+  top: 0;
+
+  backdrop-filter: blur(0.1rem);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(160, 32, 240, 0.1);
 }
