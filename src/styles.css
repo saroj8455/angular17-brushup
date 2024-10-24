@@ -158,6 +158,7 @@ p-button {
   font-weight: 500;
 }
 
+/* push footer always bottom of the page */
 
 app-root {
   display: flex;
