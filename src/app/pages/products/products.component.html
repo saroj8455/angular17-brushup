@@ -9,8 +9,30 @@
     <!-- <p class="text-2xl text-purple-400 m-0 text-center ml-4">Loading......</p> -->
   </ngx-spinner>
 </article>
-
 <div class="product__grid">
+  <div class="products">
+    @for (product of products; track $index) {
+    <p-card header="{{product.title}}" subheader="{{product.category}}">
+      <ng-template pTemplate="header">
+        <img alt="Card" src="{{product.image}}" />
+      </ng-template>
+      <p class="text-overflow-ellipsis white-space-nowrap overflow-hidden">
+        {{product.description}}
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+          <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
+          <p-button label="Save" class="w-full" styleClass="w-full" />
+        </div>
+      </ng-template>
+    </p-card>
+    }
+
+
+  </div>
+</div>
+
+<!-- <div class="product__grid mt-4">
   <div class="products">
     <p-card header="Advanced Card" subheader="Card Subheader">
       <ng-template pTemplate="header">
@@ -93,4 +115,4 @@
       </ng-template>
     </p-card>
   </div>
-</div>
+</div> -->

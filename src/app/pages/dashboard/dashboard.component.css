@@ -4,7 +4,7 @@
 
 .start-counter > article::before {
   counter-increment: article;
-  content: counter(article);
+  /* content: counter(article); */
   font-family: "Times New Roman", Times, serif;
   font-weight: 700;
 }

@@ -2,6 +2,8 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { ConfigService } from '../../services/config.service';
+import { Product } from '../../types';
 
 @Component({
   selector: 'app-products',
@@ -12,6 +14,9 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 })
 export class ProductsComponent implements OnInit {
   spinner = inject(NgxSpinnerService);
+  configService = inject(ConfigService);
+
+  products: Product[] = [];
 
   ngOnInit(): void {
     /** spinner starts on init */
@@ -20,6 +25,10 @@ export class ProductsComponent implements OnInit {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 5000);
+    }, 100);
+
+    this.configService.loadProductsFromFakeApi().subscribe((products) => {
+      this.products = products;
+    });
   }
 }
