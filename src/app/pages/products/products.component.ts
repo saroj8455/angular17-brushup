@@ -21,14 +21,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     /** spinner starts on init */
     this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 100);
-
     this.configService.loadProductsFromFakeApi().subscribe((products) => {
-      this.products = products;
+      setTimeout(() => {
+        this.products = products;
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 5000);
     });
   }
 }
