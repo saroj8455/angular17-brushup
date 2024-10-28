@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
       { label: 'Home', routerLink: 'home', icon: 'pi pi-shop' },
       { label: 'About', routerLink: 'about', icon: 'pi  pi-user' },
       { label: 'Products', routerLink: 'products', icon: 'pi  pi-amazon' },
+      { label: 'Template', routerLink: 'template', icon: 'pi  pi-book' },
       { label: 'Profile', routerLink: 'profile/1234', icon: 'pi  pi-discord' },
     ];
   }

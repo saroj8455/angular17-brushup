@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CreateProductComponent } from './pages/dashboard/create-product/create-product.component';
 import { ProductListComponent } from './pages/dashboard/product-list/product-list.component';
 import { VenderComponent } from './pages/dashboard/vender/vender.component';
+import { TemplateFormComponent } from './pages/template-form/template-form.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,15 @@ export const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
+  },
+  {
+    path: 'template',
+    // component: TemplateFormComponent,
+    // standlone component as lazy load
+    loadComponent: () =>
+      import('./pages/template-form/template-form.component').then(
+        (comp) => comp.TemplateFormComponent
+      ),
   },
   {
     path: 'dashboard',

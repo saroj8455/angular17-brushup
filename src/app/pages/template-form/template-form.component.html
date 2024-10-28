@@ -1,0 +1,21 @@
+<div class="grid">
+  <div class="col-12 md:col-3">
+    <div class="text-900 font-medium text-3xl mb-4">Cars Filter</div>
+
+    <div class="car-filter" [formGroup]="formGroup">
+      <div class="card flex justify-content-center">
+        <div class="flex flex-column gap-2">
+          <label for="username">Username</label>
+          <input pInputText id="username" aria-describedby="username-help" formControlName="text" />
+          <small id="username-help">
+            Enter your username to reset your password.
+          </small>
+        </div>
+      </div>
+      <div class="card flex gap-4 mt-4">
+        <p-button [disabled]="formGroup.valid" (click)="handelSearch()" label="Search" icon="pi pi-check" />
+        <p-button (click)="reset()" label="Reset" icon="pi pi-times" severity="danger" />
+      </div>
+    </div>
+  </div>
+</div>
