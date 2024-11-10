@@ -8,7 +8,7 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FlexiconsComponent, PrimeconfigModule, RouterModule],
+  imports: [RouterOutlet, PrimeconfigModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
